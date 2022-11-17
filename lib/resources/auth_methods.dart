@@ -39,7 +39,7 @@ class AuthMethods {
           await _firestore.collection('users').doc(user.uid).set({
             'usernmae': user.displayName,
             'uid': user.uid,
-            ' ': user.photoURL,
+            'profilePhoto': user.photoURL,
           });
         }
         res = true;
@@ -58,12 +58,4 @@ class AuthMethods {
       print(e);
     }
   }
-}
-
-signInWithGoogle() async {
-  try {
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-    final GoogleSignInAuthentication? googleAuth =
-        await googleUser?.authentication;
-  } catch (e) {}
 }
