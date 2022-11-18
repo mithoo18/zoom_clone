@@ -14,7 +14,25 @@ class HistoryMeetingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: ,
+      stream: FirestoreMethods().meetingsHistory,
+      builder: (context,(context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child : CircularProgressIndicatior(),
+          );
+        }
+        return Listview.builder(
+          itemCount : (snapshot.data! as dynamic).docs.length,
+          itemBuilder : (context,index) => ListTitle(
+            title : Text(
+              'Room Name : ${(snapshot.data! as dynamic).docs.length,
+               itemBuilder : (context,index) => ListTitle
+              }'
+            )
+          )
+        )
+
+      }),
     );
   }
 }

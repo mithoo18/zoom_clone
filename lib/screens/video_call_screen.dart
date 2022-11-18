@@ -62,6 +62,9 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
 
       body: Column(
         children: [
+     
+     
+     
           SizedBox(
             height: 60,
             child: TextField(
@@ -78,6 +81,23 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
               ),
             ),
           ),
+
+         SizedBox(
+          height: 60,
+          child: TextField(
+            controller: nameController,
+            maxLines: 1,
+            textAlign: TextAlign.center,
+            keyboardType: TextInputType.number,
+            
+            ),
+          ),
+         )
+
+
+
+
+
 
           const SizedBox(height: 20),
           InkWell(
