@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Text(
-            'State or join a meeting',
+            'Start or join a meeting',
             style: const TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.bold,
@@ -33,7 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
             text: "Goggle Sign In",
             onPressed: () async {
               bool res = await _authMethods.signInWithGoogle(context);
-
               if (res) {
                 Navigator.pushNamed(context, '/home');
               }

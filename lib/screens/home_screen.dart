@@ -3,6 +3,7 @@ import 'package:zoom_clone/resources/auth_methods.dart';
 import 'package:zoom_clone/screens/history_meeting_screen.dart';
 import 'package:zoom_clone/utils/colors.dart';
 import 'package:zoom_clone/widgets/custom_button.dart';
+import 'package:zoom_clone/screens/meeting_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -20,14 +21,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
- List<Widget> pages = [
-  MeetingScreen(),
-  const HistoryMeetingScreen(),
-  const Text('Contacts')
-  CustomButton(text: 'Log Out', 
-  onPressed: (() => AuthMethods().signOut()),
- ];
- 
+  List<Widget> pages = [
+    MeetingScreen(),
+    const HistoryMeetingScreen(),
+    const Text('Contacts'),
+    CustomButton(text: 'Log Out', onPressed: () => AuthMethods().signOut()),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,19 +47,23 @@ class _HomeScreenState extends State<HomeScreen> {
         type: BottomNavigationBarType.fixed,
         unselectedFontSize: 14,
         items: const [
-          
-          
-          BottomNavigationBarItem(icon: 
-          Icon(Icons.comment_bank,
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.comment_bank,
+              ),
+              label: 'Meet & Char'),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outline,
+            ),
+            label: 'Contancts',
           ),
-          label: 'Meet & Char'
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.person_outline,
+            ),
+            label: 'Settings',
           ),
-
-          BottomNavigationBarItem(icon:
-           Icon(Icons.person_outline,
-           ),
-           label: 'Settings',
-           ),
         ],
       ),
     );
