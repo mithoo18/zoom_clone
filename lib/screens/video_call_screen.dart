@@ -40,15 +40,13 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
         roomName: meetingIdController.text,
         isAudioMuted: isAudioMuted,
         isVideoMuted: isVideoMuted,
-        username: nameController.text
-        );
+        username: nameController.text);
   }
-
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar : AppBar(
+      appBar: AppBar(
         elevation: 0,
         backgroundColor: backgroundColor,
         title: const Text(
@@ -59,12 +57,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
         ),
         centerTitle: true,
       ),
-
       body: Column(
         children: [
-     
-     
-     
           SizedBox(
             height: 60,
             child: TextField(
@@ -76,62 +70,51 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 fillColor: secondaryBackgroundColor,
                 filled: true,
                 border: InputBorder.none,
-                hintText: 'Room ID'
-                contentPadding: EdgeInsets.fromLTRB(16, 0, 0, 0);                
+                hintText: 'Room ID',
+                contentPadding: EdgeInsets.fromLTRB(16, 0, 0, 0),
               ),
             ),
           ),
-
-         SizedBox(
-          height: 60,
-          child: TextField(
-            controller: nameController,
-            maxLines: 1,
-            textAlign: TextAlign.center,
-            keyboardType: TextInputType.number,
-            
+          SizedBox(
+            height: 60,
+            child: TextField(
+              controller: nameController,
+              maxLines: 1,
+              textAlign: TextAlign.center,
+              keyboardType: TextInputType.number,
             ),
           ),
-         )
-
-
-
-
-
-
           const SizedBox(height: 20),
           InkWell(
             onTap: _joinMeeting,
-            child: const 
-             Padding(padding: EdgeInsets.all(8),
-             child: Text('Join',style: TextStyle(fontSize: 16
-             ),
-             ),
+            child: const Padding(
+              padding: EdgeInsets.all(8),
+              child: Text(
+                'Join',
+                style: TextStyle(fontSize: 16),
+              ),
             ),
           ),
-
           const SizedBox(height: 20),
           MeetingOption(
-            text: 'Turn Off My Video', isMute: isVideoMuted, onChange: onvideoMuted,
-            ),
+            text: 'Turn Off My Video',
+            isMute: isVideoMuted,
+            onChange: onVideoMuted(),
+          ),
         ],
       ),
     );
   }
 
-  onAudioMuted(bool val){
+  onAudioMuted(bool val) {
     setState(() {
       isAudioMuted = val;
     });
+  }
 
-
-  onVideoMuted(bool val){
+  onVideoMuted(bool val) {
     setState(() {
       isVideoMuted = val;
     });
   }
-
-  }
-
-
 }
