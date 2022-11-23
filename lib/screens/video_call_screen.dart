@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:zoom_clone/resources/auth_methods.dart';
+import 'package:zoom_clone/resources/jitsi_meet_methods.dart';
 import 'package:zoom_clone/utils/colors.dart';
 import 'package:zoom_clone/widgets/meeting_option.dart';
 
@@ -17,6 +18,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
   final AuthMethods _authMethods = AuthMethods();
   late TextEditingController meetingIdController;
   late TextEditingController nameController;
+  final JitsiMeetMethods _jitsiMeetMethods = JitsiMeetMethods();
   bool isAudioMuted = true;
   bool isVideoMuted = true;
 
@@ -25,6 +27,10 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
     meetingIdController = TextEditingController(
       text: _authMethods.user.displayName,
     );
+    nameController = TextEditingController(
+      text: _authMethods.user.displayName,
+    );
+
     super.initState();
   }
 
@@ -32,6 +38,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
   void dispose() {
     super.dispose();
     meetingIdController.dispose();
+    nameController.dispose();
     JitsiMeet.removeAllListeners();
   }
 
@@ -82,6 +89,13 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
               maxLines: 1,
               textAlign: TextAlign.center,
               keyboardType: TextInputType.number,
+              decoration: const InputDecoration(
+                fillColor: secondaryBackgroundColor,
+                filled: true,
+                border: InputBorder.none,
+                hintText: 'Name',
+                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+              ),
             ),
           ),
           const SizedBox(height: 20),
@@ -97,9 +111,11 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
           ),
           const SizedBox(height: 20),
           MeetingOption(
+              text: 'Mute Audio', isMute: isAudioMuted, onChange: onAudioMuted),
+          MeetingOption(
             text: 'Turn Off My Video',
             isMute: isVideoMuted,
-            onChange: onVideoMuted(),
+            onChange: onVideoMuted,
           ),
         ],
       ),
