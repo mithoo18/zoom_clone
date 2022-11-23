@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:zoom_clone/resources/jitsi_meet_methods.dart';
 import 'package:jitsi_meet/jitsi_meet.dart';
+import 'dart:math';
 import 'package:zoom_clone/resources/jitsi_meet_methods.dart';
 
 import 'package:zoom_clone/widgets/home_meeting_button.dart';
