@@ -29,7 +29,7 @@ $ git remote remove origin
   <td><img align="left" src="https://github.com/mithoo18/zoom_clone/blob/master/gitImg/1.jpg" alt="Home Screen" /></td>
 
 <td><img align="right" src="https://github.com/mithoo18/zoom_clone/blob/master/gitImg/2.jpg" alt="Kid Screen" /></td>
-  <td><img align="left" src="https://github.com/mithoo18/zoom_clone/blob/master/gitImg/3.jpeg" alt="Movie Before Screen" /></td>
+  <td><img align="left" src="https://github.com/mithoo18/zoom_clone/blob/master/gitImg/3.jpeg.jpg" alt="Movie Before Screen" /></td>
 
 <td><img align="right" src="https://github.com/mithoo18/zoom_clone/blob/master/gitImg/4.jpg" alt="Movie Screen" /></td>
 </tr>
