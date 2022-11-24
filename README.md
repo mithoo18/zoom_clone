@@ -1,10 +1,10 @@
-### PrimeMovie Application
+### Zoom Clone Application
 
 ### Getting Started 🚀
 
 ```
 # Clone this repository
-$ git clone https://github.com/mithoo18/PrimeMovie
+$ git clone https://github.com/mithoo18/zoom_clone
 
 # Go into the repository
 $ cd PrimeMovie
@@ -18,9 +18,9 @@ $ git remote remove origin
 
 ### About Application
 
-- Technology Used :-Android Studio,Material Design,Firebase,Jetpack,Rest(Retrofit),AWS,Exo-Player
-- Feature :- Watch Movies,Scroll Different Tabs Like (Kids,Tv Show,etc..),Increase Speed,Forward,Different Views
-- Screen:- Splash Screen,Main Screen,Tabs
+- Technology Used :- Firebase,Flutter,Dart,Jitsi Meet
+- Feature :- Join Meeting, Google Login, Schedule Meeting, Share Screen, Log Out
+- Screen:- History, Home, Login, Meeting, Video Call
 
 
 ### How it looks 
