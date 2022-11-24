@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:jitsi_meet/jitsi_meet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -78,7 +79,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 filled: true,
                 border: InputBorder.none,
                 hintText: 'Room ID',
-                contentPadding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
               ),
             ),
           ),
@@ -94,7 +95,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 filled: true,
                 border: InputBorder.none,
                 hintText: 'Name',
-                contentPadding: EdgeInsets.fromLTRB(16, 0, 0, 0),
+                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
               ),
             ),
           ),
