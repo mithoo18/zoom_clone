@@ -6,7 +6,7 @@ import 'package:zoom_clone/widgets/custom_button.dart';
 import 'package:zoom_clone/screens/meeting_screen.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -48,10 +48,17 @@ class _HomeScreenState extends State<HomeScreen> {
         unselectedFontSize: 14,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.comment_bank,
-              ),
-              label: 'Meet & Char'),
+            icon: Icon(
+              Icons.comment_bank,
+            ),
+            label: 'Meet & Char',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.lock_clock,
+            ),
+            label: 'Meetings',
+          ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person_outline,
@@ -60,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.person_outline,
+              Icons.settings_outlined,
             ),
             label: 'Settings',
           ),

@@ -24,9 +24,8 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
 
   @override
   void initState() {
-    meetingIdController = TextEditingController(
-      text: _authMethods.user.displayName,
-    );
+    meetingIdController = TextEditingController();
+
     nameController = TextEditingController(
       text: _authMethods.user.displayName,
     );
@@ -44,10 +43,11 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
 
   _joinMeeting() {
     _jitsiMeetMethods.createMeeting(
-        roomName: meetingIdController.text,
-        isAudioMuted: isAudioMuted,
-        isVideoMuted: isVideoMuted,
-        username: nameController.text);
+      roomName: meetingIdController.text,
+      isAudioMuted: isAudioMuted,
+      isVideoMuted: isVideoMuted,
+      username: nameController.text,
+    );
   }
 
   @override
@@ -94,7 +94,7 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
                 filled: true,
                 border: InputBorder.none,
                 hintText: 'Name',
-                contentPadding: EdgeInsets.fromLTRB(16, 8, 0, 0),
+                contentPadding: EdgeInsets.fromLTRB(16, 0, 0, 0),
               ),
             ),
           ),
@@ -105,7 +105,9 @@ class _VideoCallScreenState extends State<VideoCallScreen> {
               padding: EdgeInsets.all(8),
               child: Text(
                 'Join',
-                style: TextStyle(fontSize: 16),
+                style: TextStyle(
+                  fontSize: 16,
+                ),
               ),
             ),
           ),

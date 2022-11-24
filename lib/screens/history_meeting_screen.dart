@@ -8,7 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:zoom_clone/resources/firestore_methods.dart';
 
 class HistoryMeetingScreen extends StatelessWidget {
-  const HistoryMeetingScreen({super.key});
+  const HistoryMeetingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
